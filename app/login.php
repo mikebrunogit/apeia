@@ -27,8 +27,8 @@
         <h1>Login</h1>
         <form action="./home.php" method="post">
 
-<label for="email"> Email <input name="email" type="email"> </input></label>
-<label for="senha"> Senha <input name="senha" type="password"> </input></label>
+<label for="email"> Email: <input name="email" type="email" placeholder="exemplo@gmail.com" required> </input></label><p><br><br>
+<label for="senha"> Senha: <input minlength="8" maxlength="20" name="senha" type="password" placeholder="Até 8 caractéres." required> </input></label><p><br><br>
 <button type="submit">Login</button>            
         </center>
 
