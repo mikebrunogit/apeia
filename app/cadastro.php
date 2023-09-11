@@ -13,34 +13,20 @@
 <?php
 include "componentes/navbar.php";
 ?>
-
+        <h1>Cadastro de paciente</h1>
+        <form action="./pacientes.php" method="post">
+            <label> Nome do paciente <input name="nome" type="text"> </input></label><br><br>
+            <label> idade do paciente <input name="idade" type="age"> </input></label><br><br>
+            <label> Estagio do paciente <select name="estagio">
+  <option value="inicial">inicial</option>
+  <option value="Moderado">Moderado</option>
+  <option value="Grave">Grave</option>
+</select><br><br>
+            <button type="submit">Cadastrar</button>
+        </form>
+    
+   
 </body>
 </html>
 </body>
 </html>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "apeia";
-
-// Criar conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
-$login_email = $_POST["email"];
-$login_senha = $_POST["senha"];
-
-$sql = "SELECT * FROM tab_cuidador WHERE cuid_email='$login_email' AND cuid_senha='$login_senha'";
-$result = $conn->query($sql);
-
-if ($result->num_rows == 1) {
-    echo "Bem vindo !";
-} else {
-    echo "Erro de login.";
-}
-$conn->close();
-?>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial</title>
+    <title>Sucesso!</title>
     <link href="style.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -16,9 +16,8 @@ include "componentes/navbar.php";
 
 </body>
 </html>
-</body>
-</html>
-<?php
+
+    <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -31,16 +30,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
-$login_email = $_POST["email"];
-$login_senha = $_POST["senha"];
+    $paciente_nome = $_POST["nome"];
+    $paciente_idade = $_POST["idade"];
+    $paciente_estagio = $_POST["estagio"];
+    
+    $sql = "INSERT INTO tab_paciente (pac_nome, pac_idade, pac_estagio) VALUES ('$paciente_nome', '$paciente_idade', '$paciente_estagio')";
+    
+    if ($conn->query($sql) === TRUE) {
+        echo "Cadastro de bem-sucedido!";
+    } else {
+        echo "Erro de cadastro: " . $conn->error;
+    }
 
-$sql = "SELECT * FROM tab_cuidador WHERE cuid_email='$login_email' AND cuid_senha='$login_senha'";
-$result = $conn->query($sql);
-
-if ($result->num_rows == 1) {
-    echo "Bem vindo !";
-} else {
-    echo "Erro de login.";
-}
 $conn->close();
 ?>
