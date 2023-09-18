@@ -15,7 +15,7 @@ include "componentes/navbar.php";
 ?>
 <table border="1">
     <tr>
-<?php
+        <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -33,19 +33,22 @@ $result = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
 
 while ($registro = mysqli_fetch_array($result))
 {
-  $nome = $registro['pac_nome'];
-  $idade = $registro['pac_idade'];
-  $estagio = $registro['pac_estagio'];
-  echo "<tr>";
-  echo "<td>".$nome."</td>";
-  echo "<td>".$idade."</td>";
-  echo "<td>".$estagio."</td>";
-  echo "</tr>";
+    $nome = $registro['pac_nome'];
+    $idade = $registro['pac_idade'];
+    $estagio = $registro['pac_estagio'];
+    echo '<div class="card" style="width: 18rem;">';
+    echo '<img src="..." class="card-img-top" alt="...">';
+    echo '<div class="card-body">';
+    echo '<h5 class="">'.$nome.'</h5>';
+    echo '<p class="card-text">'.$estagio.'<br>'.$idade.'</p>';
+    echo '<a href="#" class="btn btn-primary">Go somewhere</a>';
+    echo '</div>';
+    echo '</div><br><br>';
 }
-echo "</table>";
 
+echo '</tr>';
+echo '</table><br><br><br><br>';
 $conn->close();
 ?>
-
 </body>
 </html>

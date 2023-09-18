@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 28/08/2023 às 15:30
+-- Tempo de geração: 18/09/2023 às 22:32
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -79,6 +79,14 @@ CREATE TABLE `tab_paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Despejando dados para a tabela `tab_paciente`
+--
+
+INSERT INTO `tab_paciente` (`pac_id`, `pac_nome`, `pac_idade`, `pac_genero`, `pac_edereco`, `pac_cep`, `pac_estagio`) VALUES
+(1, 'Mike', '75', 'M', NULL, NULL, 'inicial'),
+(2, 'Enzo', '67', 'M', NULL, NULL, 'Moderado');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -109,6 +117,12 @@ ALTER TABLE `tab_paciente`
 --
 ALTER TABLE `tab_cuidador`
   MODIFY `cuid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `tab_paciente`
+--
+ALTER TABLE `tab_paciente`
+  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
