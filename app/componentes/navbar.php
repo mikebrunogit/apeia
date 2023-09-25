@@ -22,7 +22,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="cadastro.php">Cadastrar</a></li>
             <li><a class="dropdown-item" href="agenda.php">Ver agenda</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="cadastroAtividades.php">Cadastrar atividades</a></li>
           </ul>
         </li>
       </ul>

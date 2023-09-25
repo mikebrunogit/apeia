@@ -19,7 +19,7 @@ include "componentes/navbar.php";
     <div class="box">
 
         <h1>registro</h1>
-        <form action="php/index.php" method="post">
+        <form action="index.php" method="post">
             <label> Nome <input name="nome" type="text"> </input></label><br><br>
             <label> Número <input name="numero" type="tel"> </input></label><br><br>
             <label> Email <input name="email" type="email"> </input></label><br><br>
