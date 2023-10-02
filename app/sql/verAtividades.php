@@ -16,14 +16,13 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM tab_tarefas";
 $result = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
 
-$ultimoPaciente = null; // Para rastrear o paciente atual
+$ultimoPaciente = null;
 
 while ($tarefa = mysqli_fetch_array($result)) {
     $nomePaciente = $tarefa['pac_nome'];
     $nomeTarefa = $tarefa['tar_nome'];
     $descricaoTarefa = $tarefa['tar_descricao'];
 
-    // Se o paciente mudou, feche o card anterior e comece um novo
     if ($nomePaciente != $ultimoPaciente) {
         if ($ultimoPaciente != null) {
             echo '</ul>';
@@ -49,7 +48,7 @@ while ($tarefa = mysqli_fetch_array($result)) {
     $ultimoPaciente = $nomePaciente;
 }
 
-// Feche o último card
+
 if ($ultimoPaciente != null) {
     echo '</ul>';
     echo '<div class="linha"></div>';
