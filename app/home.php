@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    
+    // Verificar se o usuário está autenticado
+    if (!isset($_SESSION['usuario_autenticado'])) {
+        header('Location: login.php'); // Redirecionar se não autenticado
+        exit();
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +23,6 @@
     
     <?php
     include 'componentes/navbar.php';
-    include 'sql/loginCuidador.php';
     ?>
 
 </body>

@@ -15,8 +15,6 @@
 include "componentes/navbar.php";
 ?>    
 
-<div class="container">
-    <div class="box">
 
         <h1>registro</h1>
         <form action="index.php" method="post">
@@ -26,8 +24,7 @@ include "componentes/navbar.php";
             <label> Senha <input name="senha" type="password"> </input></label><br><br>
             <button type="submit">Registrar</button>
         </form>
-    </div>
-   </div>
+
 
 </body>
 </html>

@@ -18,7 +18,7 @@ include "app/componentes/navbar.php";
 
 <center><br><br>
 <button><a href="./app/registro.php">Registro</a></button>
-    <button><a href="./app/login.php">Login</a></button>
+    <button><a href="./app/loginCuidador.php">Login</a></button>
 </center> 
 </body>
 </html>
