@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 25/09/2023 às 22:49
+-- Tempo de geração: 02/10/2023 às 03:11
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -38,13 +38,6 @@ CREATE TABLE `tab_cuidador` (
   `cuid_edereco` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `tab_cuidador`
---
-
-INSERT INTO `tab_cuidador` (`cuid_id`, `cuid_email`, `cuid_senha`, `cuid_nome`, `cuid_telefone`, `cuid_idade`, `cuid_genero`, `cuid_edereco`) VALUES
-(1, 'mikebruno@gmail.com', 'teste', 'Mike', '', NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -78,18 +71,6 @@ CREATE TABLE `tab_paciente` (
   `pac_estagio` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `tab_tarefas`
---
-
-CREATE TABLE `tab_tarefas` (
-  `tar_id` int(11) NOT NULL,
-  `tar_nome` varchar(150) NOT NULL,
-  `tar_descricao` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Índices para tabelas despejadas
 --
@@ -113,12 +94,6 @@ ALTER TABLE `tab_paciente`
   ADD PRIMARY KEY (`pac_id`);
 
 --
--- Índices de tabela `tab_tarefas`
---
-ALTER TABLE `tab_tarefas`
-  ADD PRIMARY KEY (`tar_id`);
-
---
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -126,19 +101,13 @@ ALTER TABLE `tab_tarefas`
 -- AUTO_INCREMENT de tabela `tab_cuidador`
 --
 ALTER TABLE `tab_cuidador`
-  MODIFY `cuid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cuid_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tab_paciente`
 --
 ALTER TABLE `tab_paciente`
-  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `tab_tarefas`
---
-ALTER TABLE `tab_tarefas`
-  MODIFY `tar_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

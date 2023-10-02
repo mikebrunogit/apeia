@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,36 +12,39 @@
 <body>
 <?php
 include "componentes/navbar.php";
-?> 
-    
+?>
+
 </body>
 </html>
 <?php
- $servername = "localhost";
- $username = "root";
- $password = "";
- $dbname = "apeia";
- 
- // Criar conexão
- $conn = new mysqli($servername, $username, $password, $dbname);
- 
- if ($conn->connect_error) {
-     die("Erro na conexão: " . $conn->connect_error);
- }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "apeia";
 
-    $cadastro_nome = $_POST["nome"];
-    $cadastro_email = $_POST["email"];
-    $cadastro_senha = $_POST["senha"];
-    $cadastro_numero = $_POST["numero"];
+// Criar conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar a conexão
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
+    $nomePaciente = $_POST["nome"];
+    $atividadeNome = $_POST["atividade"];
+    $atividadeDescricao = $_POST["descricao"];
     
-    $sql = "INSERT INTO tab_cuidador (cuid_nome, cuid_email, cuid_senha, cuid_telefone) VALUES ('$cadastro_nome', '$cadastro_email', '$cadastro_senha', '$cadastro_numero')";
+    // Consulta SQL para inserir dados na tabela tab_tarefas
+    $sql = "INSERT INTO tab_tarefas (pac_nome, tar_nome, tar_descricao)
+    VALUES ('$nomePaciente', '$atividadeNome', '$atividadeDescricao')";
+    
     
     if ($conn->query($sql) === TRUE) {
-        echo "Cadastro bem-sucedido!";
+        echo "Sucesso em cadastrar atividades";
     } else {
         echo "Erro de cadastro: " . $conn->error;
     }
-
-$conn->close();
-?>
-
+    
+    $conn->close();
+    ?>
+</body>
+</html>

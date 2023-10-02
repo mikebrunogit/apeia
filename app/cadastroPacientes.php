@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,36 +12,21 @@
 <body>
 <?php
 include "componentes/navbar.php";
-?> 
+?>
+        <h1>Cadastro de paciente</h1>
+        <form action="./sucessPaciente.php" method="post">
+            <label> Nome do paciente <input name="nome" type="text"> </input></label><br><br>
+            <label> idade do paciente <input name="idade" type="age"> </input></label><br><br>
+            <label> Estagio do paciente <select name="estagio">
+  <option value="inicial">inicial</option>
+  <option value="Moderado">Moderado</option>
+  <option value="Grave">Grave</option>
+</select><br><br>
+            <button type="submit">Cadastrar</button>
+        </form>
     
+   
 </body>
 </html>
-<?php
- $servername = "localhost";
- $username = "root";
- $password = "";
- $dbname = "apeia";
- 
- // Criar conexão
- $conn = new mysqli($servername, $username, $password, $dbname);
- 
- if ($conn->connect_error) {
-     die("Erro na conexão: " . $conn->connect_error);
- }
-
-    $cadastro_nome = $_POST["nome"];
-    $cadastro_email = $_POST["email"];
-    $cadastro_senha = $_POST["senha"];
-    $cadastro_numero = $_POST["numero"];
-    
-    $sql = "INSERT INTO tab_cuidador (cuid_nome, cuid_email, cuid_senha, cuid_telefone) VALUES ('$cadastro_nome', '$cadastro_email', '$cadastro_senha', '$cadastro_numero')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "Cadastro bem-sucedido!";
-    } else {
-        echo "Erro de cadastro: " . $conn->error;
-    }
-
-$conn->close();
-?>
-
+</body>
+</html>
