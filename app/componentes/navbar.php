@@ -20,7 +20,7 @@
             
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="cadastroPacientes.php">Cadastrar Pacientes
+            <li><a class="dropdown-item" href="./app/cadastroPacientes.php">Cadastrar Pacientes
             </a></li>
             <li><a class="dropdown-item" href="agendaPacientes.php">Agenda de Pacientes</a></li>
             <li><a class="dropdown-item" href="cadastroAtividades.php">Cadastrar atividades</a></li>

@@ -29,13 +29,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Erro na conexão: " . $conn->connect_error);
 }
-    $nomePaciente = $_POST["nome"];
+    $idPaciente = $_POST["idPaciente"];
     $atividadeNome = $_POST["atividade"];
     $atividadeDescricao = $_POST["descricao"];
     
     // Consulta SQL para inserir dados na tabela tab_tarefas
-    $sql = "INSERT INTO tab_tarefas (pac_nome, tar_nome, tar_descricao)
-    VALUES ('$nomePaciente', '$atividadeNome', '$atividadeDescricao')";
+    $sql = "INSERT INTO tab_tarefas (pac_id, tar_nome, tar_descricao)
+    VALUES ('$idPaciente', '$atividadeNome', '$atividadeDescricao')";
     
     
     if ($conn->query($sql) === TRUE) {

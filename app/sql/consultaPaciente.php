@@ -2,7 +2,7 @@
     <div class="mb-3">
     <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Pacientes</label>
-  <select class="form-select" id="inputGroupSelect01" name="nome">
+  <select class="form-select" id="inputGroupSelect01" name="idPaciente">
 <?php
 $servername = "localhost";
 $username = "root";
@@ -19,10 +19,11 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM tab_paciente";
 $result = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
 
-while ($registro = mysqli_fetch_array($result))
+while ($pacientes = mysqli_fetch_array($result))
 {
-    $nome = $registro['pac_nome'];
-    echo '<option value='."$nome".'>'.$nome.'</option>';
+    $nomePaciente = $pacientes['pac_nome'];
+    $idPaciente = $pacientes['pac_id'];
+    echo '<option value='."$idPaciente".'>'.$nomePaciente.'</option>';
     
     
 }

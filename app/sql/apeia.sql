@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 02/10/2023 às 03:11
+-- Tempo de geração: 09/10/2023 às 04:16
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -71,6 +71,19 @@ CREATE TABLE `tab_paciente` (
   `pac_estagio` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tab_tarefas`
+--
+
+CREATE TABLE `tab_tarefas` (
+  `tar_id` int(11) NOT NULL,
+  `pac_id` int(11) NOT NULL,
+  `tar_nome` varchar(150) NOT NULL,
+  `tar_descricao` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -94,6 +107,13 @@ ALTER TABLE `tab_paciente`
   ADD PRIMARY KEY (`pac_id`);
 
 --
+-- Índices de tabela `tab_tarefas`
+--
+ALTER TABLE `tab_tarefas`
+  ADD PRIMARY KEY (`tar_id`),
+  ADD KEY `pac_id` (`pac_id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -108,6 +128,22 @@ ALTER TABLE `tab_cuidador`
 --
 ALTER TABLE `tab_paciente`
   MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tab_tarefas`
+--
+ALTER TABLE `tab_tarefas`
+  MODIFY `tar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `tab_tarefas`
+--
+ALTER TABLE `tab_tarefas`
+  ADD CONSTRAINT `tab_tarefas_ibfk_1` FOREIGN KEY (`pac_id`) REFERENCES `tab_paciente` (`pac_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
