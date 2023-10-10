@@ -6,57 +6,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: black;
-        }
-        div{
-            background-color: rgba(0, 0, 0, 0.9);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            padding: 80px;
-            border-radius: 15px;
-            color: #fff;
-        }
-        input{
-            padding: 15px;
-            border: none;
-            outline: none;
-            font-size: 15px;
-        }
-        button{
-            background-color: dodgerblue;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 10px;
-            color: white;
-            font-size: 15px;
-            
-        }
-        button:hover{
-            background-color: deepskyblue;
-            cursor: pointer;
-        }
-        img{
-            width:100%;
-            height: 98vh;
-        }
+          body{
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: black;
+          }
+          div{
+              
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              padding: 80px;
+              border-radius: 15px;
+              color: #fff;
+          }
+          input{
+              padding: 15px;
+              border: none;
+              outline: none;
+              font-size: 15px;              
+          }
+          button{
+              background-color: purple;
+              border: none;
+              padding: 15px;
+              width: 100%;
+              border-radius: 10px;
+              color: white;
+              font-size: 15px;
+              
+          }
+          button:hover{
+              background-color: deepskyblue;
+              cursor: pointer;
+          }
+          img{
+              width:20%;
+              height: 20vh;
+          }
+          footer img {
+              margin-top: 500px;
+              width: 40px;
+              height: 40px;
+          }
+
+          footer {
+              display: flex;
+              justify-content: center;
+          }
+
+          footer a {
+              margin: 20px;
+              text-align: center;
+          }
+
+          footer p {
+              margin-top: 20px;
+          }
+          nav{
+             color: aliceblue;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+            background: #23232e;
+            height: 8vh;
+          }
+
+         
+
+          .nav-list {
+            list-style: none;
+            display: flex;
+          }
+
+          .nav-list li {
+            letter-spacing: 3px;
+            margin-left: 32px;
+          }
+
+         
+        
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+          <h1><i><b>APEIA</b></i></h1>
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Projetos</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+  
     //link do fundo
     // https://www.google.com/search?sca_esv=570758810&sxsrf=AM9HkKnon15-kcQJrW_Fbpkvu7-ODji64Q:1696453278988&q=imagem+fundo&tbm=isch&source=lnms&sa=X&ved=2ahUKEwj4wMn4pN2BAxU_EbkGHbC0ABoQ0pQJegQIDBAB&biw=1600&bih=1083&dpr=1#imgrc=H_idF3v4XpymiM
-    <img src="paisagem.webp">
+    <img src="LOGO.EXP">
     <div>
         <h1>Login</h1>
-        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="Nome:">
         <br><br>
-        <input type="password" placeholder="Senha">
+        <input type="password" placeholder="Senha:">
         <br><br>
         <button>Enviar</button>
     </div>
+    <footer>
+      <a href="https://github.com/AdrianaSaty" target="_blank" rel="noopener noreferrer">
+          <img src="./img/github.svg"></img>
+          <p>Github</p>
+      </a>
+      <a href="https://www.linkedin.com/in/adriana-saty-bertelli/" target="_blank" rel="noopener noreferrer">
+          <img src="./img/linkedin.svg"></img>
+          <p>Linkedin</p>
+      </a>
+      <a href="https://www.youtube.com/c/AdrianaSaty" target="_blank" rel="noopener noreferrer">
+          <img src="./img/youtube.svg"></img>
+          <p>Youtube</p>
+      </a>
+  </footer>
+</div>
 </body>
 </html>
