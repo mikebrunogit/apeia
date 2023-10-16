@@ -11,10 +11,37 @@
 </head>
 <body>
 <?php
-include "componentes/navbar.php";
+include "componentes/navbarLogin.php";
 ?>
+
 <?php
 include "sql/verPacientes.php";
+while ($registro = mysqli_fetch_array($result)) {
+    $pacienteID = $registro['pac_id'];
+    $nomePaciente = $registro['pac_nome'];
+    $nomeTarefa = $registro['tar_nome'];
+    $descricaoTarefa = $registro['tar_descricao'];
+
+    // Início da "box" do paciente
+    echo '<div class="patient-box">';
+    echo '<div class="patient-name">' . $nomePaciente . '</div>';
+    echo '<div class="patient-age">ID do Paciente: ' . $pacienteID . '</div>';
+    if ($nomeTarefa && $descricaoTarefa) {
+        // Existe uma tarefa associada ao paciente
+        echo '<div class="patient-stage">Nome da Tarefa: ' . $nomeTarefa . '</div>';
+        echo '<div class="patient-stage">Descrição da Tarefa: ' . $descricaoTarefa . '</div>';
+        echo '<button class="activities-button" onclick="location.href=\'cadastrar_atividade.php?paciente_id=' . $pacienteID . '\'">Cadastrar Atividade</button>';
+    } else {
+        // Não há tarefa associada ao paciente
+        echo '<div class="patient-stage">Sem Atividades</div>';
+        echo '<button class="activities-button" onclick="location.href=\'cadastrar_atividade.php?paciente_id=' . $pacienteID . '\'">Cadastrar Atividade</button>';
+    }
+    // Fim da "box" do paciente
+
+    echo '</div>'; // Fechamento da "box"
+}
 ?>
+
+
 </body>
 </html>

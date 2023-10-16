@@ -1,3 +1,41 @@
+<style>
+ .card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .paciente {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .tarefas {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .tarefas li {
+    margin: 10px 0;
+  }
+
+  .linha {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+  }
+
+  .botao {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+</style>
 <table border="0">
     <tr>
         <?php
