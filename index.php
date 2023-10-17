@@ -18,7 +18,7 @@ include "app/componentes/navbar.php";
 <div class="container">
     <div class="content">
       <h1>O que é o projeto APEIA ? <ion-icon name="code-outline"></ion-icon></h1>
-      <p>O projeto apeia é um aplicativo web gratuito paraq cuidadores. Oferecemos suporte de maneira gratuita através do nosso gerenciador de atividades gratuito, facilitando o acesso a artigos e videos sobre Alzheimer e garantindo que o cuidador tenha acesso a entretenimentos relevantes para ofereces aos pacientes.</p>
+      <p>O projeto apeia é um aplicativo web gratuito para os cuidadores. Oferecemos suporte de maneira gratuita através do nosso gerenciador de atividades gratuito, facilitando o acesso a artigos e videos sobre Alzheimer e garantindo que o cuidador tenha acesso a entretenimentos relevantes para ofereces aos pacientes.</p>
 
       <h1>Artigos e reportagens sobre Alzheimer <ion-icon name="newspaper-outline"></ion-icon></h1>
 
@@ -36,7 +36,7 @@ include "app/componentes/navbar.php";
 
 <p>Nossa aplicação web oferece uma to-do list onde é possível criar atividades com descrição. O principal foco é a acessibilidade e facilidade na hora de se organizar!</p>
 
-<p>Clique  <a  href="./app/LoginCuidador.php">aqui</a> para ter acesso a nossa to-do list! (este recurso somente pode ser acessado por quem é registrado em nossa aplicação, clique <a  href="./app/registro.php">aqui</a>para se registrar). </p>
+<p>Clique  <a  href="./app/LoginCuidador.php">aqui</a> para ter acesso a nossa to-do list! (este recurso somente pode ser acessado por quem é registrado em nossa aplicação, clique <a  href="./app/registro.php">aqui</a> para se registrar). </p>
 
     </div>
     <div class="background-layer"></div>
