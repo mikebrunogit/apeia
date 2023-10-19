@@ -11,8 +11,9 @@
 </head>
 <body>
 <?php
-include "componentes/navbar.php";
+include "componentes/navbarLogin.php";
 ?>
+
 
 </body>
 </html>
@@ -34,7 +35,7 @@ if ($conn->connect_error) {
     $atividadeDescricao = $_POST["descricao"];
     
     // Consulta SQL para inserir dados na tabela tab_tarefas
-    $sql = "INSERT INTO tab_tarefas (pac_id, tar_nome, tar_descricao)
+$sql = "INSERT INTO tab_tarefas (pac_id, tar_nome, tar_descricao)
     VALUES ('$idPaciente', '$atividadeNome', '$atividadeDescricao')";
     
     
@@ -43,7 +44,8 @@ if ($conn->connect_error) {
     } else {
         echo "Erro de cadastro: " . $conn->error;
     }
-    
+
+
     $conn->close();
     ?>
 </body>
