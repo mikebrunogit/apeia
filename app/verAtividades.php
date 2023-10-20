@@ -20,19 +20,5 @@
  include 'sql/verAtividades.php';
 ?>  
 
-<script>
-function verificarExclusao() {
-    var checkboxes = document.querySelectorAll("input[name='atividade[]']:checked");
-    var botaoExclusao = document.getElementById("botaoExclusao");
-    
-    if (checkboxes.length > 0) {
-        botaoExclusao.style.display = "block";
-    } else {
-        botaoExclusao.style.display = "none";
-        alert("Selecione pelo menos uma atividade para excluir.");
-    }
-}
-</script>
-
 </body>
 </html>

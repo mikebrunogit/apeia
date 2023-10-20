@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="chess.css">
     <title>Xadrez</title>
 </head>
 <body onload="inicia_jogo();">
@@ -66,5 +67,7 @@
 <div id="t87" onclick="seleciona(8,7);"></div>	<div id="t88" onclick="seleciona(8,8);"></div>
 
 </div>
+
+<script src="chess.js"></script>
 </body>
 </html>
