@@ -1,0 +1,145 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    
+}
+.null{
+    display: none;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.patient-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  /* Estilos para o nome do paciente */
+  .patient-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  /* Estilos para a idade do paciente */
+  .patient-age {
+    font-size: 18px;
+  }
+
+  /* Estilos para a lista de atividades */
+  .activity-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  /* Estilos para os itens da lista de atividades */
+  .activity-item {
+    margin-bottom: 5px;
+  }
+
+ 
+  /* Estilos para o botão de cadastro de atividades */
+  .activities-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  /* Estilos para o botão de exclusão de tarefas */
+  .delete-button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  /* Estilos para o botão de exclusão de paciente */
+  .delete-patient-button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .paciente {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .tarefas {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .tarefas li {
+    margin: 10px 0;
+  }
+
+  .linha {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+  }
+
+  .botao {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }

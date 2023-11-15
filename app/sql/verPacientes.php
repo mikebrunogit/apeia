@@ -1,61 +1,3 @@
-<style>
-  /* Estilos para a "box" do paciente */
-  .patient-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-  }
-
-  /* Estilos para o nome do paciente */
-  .patient-name {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  /* Estilos para a idade do paciente */
-  .patient-age {
-    font-size: 18px;
-  }
-
-  /* Estilos para a lista de atividades */
-  .activity-list {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  /* Estilos para os itens da lista de atividades */
-  .activity-item {
-    margin-bottom: 5px;
-  }
-
-  /* Estilos para o botão de cadastro de atividades */
-  .activities-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
-  /* Estilos para o botão de exclusão de tarefas */
-  .delete-button {
-    padding: 10px 20px;
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
-</style>
-
 <?php
 $servername = "localhost";
 $username = "root";
@@ -65,7 +7,12 @@ $dbname = "apeia";
 // Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if (isset($_POST["exclusaoAtividades"])) {
+// Verificar a conexão
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
+
+  if (isset($_POST["exclusaoAtividades"])) {
     $paciente_id = $_POST["paciente_id"];
     $atividades_para_excluir = isset($_POST["atividade"]) ? $_POST["atividade"] : [];
 
@@ -85,6 +32,20 @@ if (isset($_POST["exclusaoAtividades"])) {
         echo '<script>alert("Por favor, marque pelo menos uma atividade para excluir.");</script>';
     }
 }
+
+if (isset($_POST["exclusaoPaciente"])) {
+    $paciente_id = $_POST["paciente_id"];
+    $sql = "DELETE FROM tab_paciente WHERE pac_id = $paciente_id";
+
+    if ($conn->query($sql) === TRUE) {
+        // Recarregar a página para refletir as alterações
+        header('Location: ' . $_SERVER['PHP_SELF']);
+        exit;
+    } else {
+        echo "Erro ao excluir paciente: " . $conn->error;
+    }
+}
+
 $sql = "SELECT * FROM tab_paciente";
 $result = mysqli_query($conn, $sql) or die("Erro ao retornar dados");
 
@@ -106,7 +67,7 @@ while ($registro = mysqli_fetch_array($result)) {
 
     if (mysqli_num_rows($resultAtividades) > 0) {
         // O paciente tem atividades, mostrar a seção de atividades
-        echo '<form method="post">';
+        echo '<div = class="null"><form method="post"></div>';
         echo '<HR><h5>Atividades</h5>';
         echo '<input type="hidden" name="paciente_id" value="' . $pacienteID . '">';
         echo '<input type="hidden" name="exclusaoAtividades" value="1">';
@@ -121,17 +82,22 @@ while ($registro = mysqli_fetch_array($result)) {
 
         // Botão "Excluir Tarefas" (aparece apenas se houver atividades)
         echo '<button class="delete-button" type="submit">Excluir Tarefas</button>';
-        echo '</form>';
+        echo '</form><br>';
     }
 
     // Botão "Cadastrar Atividade"
-    echo '<br><a class="activities-button" href="cadastroAtividades.php">Cadastrar Atividade</a>';
+    echo '<br><a class="activities-button" href="cadastroAtividades.php">Cadastrar Atividade</a><br><br>';
+
+    // Botão "Excluir Paciente"
+    echo '<div class="null"><form method="post"></div>';
+    echo '<input type="hidden" name="paciente_id" value="' . $pacienteID . '">';
+    echo '<input type="hidden" name="exclusaoPaciente" value="1">';
+    echo '<button class="delete-patient-button" type="submit">Excluir Paciente</button>';
+    echo '</form>';
 
     // Fim da "box" do paciente
     echo '</div>'; // Fechamento da "box"
 }
-
-
 
 $conn->close();
 ?>

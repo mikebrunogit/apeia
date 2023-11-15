@@ -18,7 +18,7 @@
 <a class="nav-link" href="games/indexGames.php">Games</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="#">Link 3</a>
+
 </li>
 </ul>
 </div>

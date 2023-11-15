@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
@@ -56,4 +58,3 @@ body {
   .login-form {
     margin: 0;
   }
-  
