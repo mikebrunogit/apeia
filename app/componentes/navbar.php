@@ -47,31 +47,7 @@
         </ul>
     </div>
 </nav>
-<style>
- .nav-login .nav-link{
-  border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    padding: 5px 12px;
-    margin-right:12px;
-     
-
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
-    backdrop-filter: blur(4px);
-    -webkit-backgrop-filter: blur(4px);
-
-    text-decoration: none;
-    font-weight: 500;
-transition: background 0.2s;
- }
-.nav-login .nav-link:hover {
-  background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid white;
-}
   </style>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

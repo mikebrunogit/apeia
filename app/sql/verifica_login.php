@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Este é o código de registro
         $cadastro_nome = $_POST["nome"];
         $cadastro_email = $_POST["email"];
-        $cadastro_senha = $_POST["senha"];
+        $cadastro_senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
         $cadastro_numero = $_POST["numero"];
 
         $sql = "INSERT INTO tab_cuidador (cuid_nome, cuid_email, cuid_senha) VALUES ('$cadastro_nome', '$cadastro_email', '$cadastro_senha')";
@@ -31,21 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $login_email = $_POST["email"];
         $login_senha = $_POST["senha"];
 
-        $sql = "SELECT cuid_id, cuid_senha FROM tab_cuidador WHERE cuid_email = '$login_email'";
-        $result = $conn->query($sql);
+        $sql = "SELECT * FROM tab_cuidador WHERE cuid_email = '$login_email' LIMIT 1";
+        $result = $conn->query($sql) or die($mysqli->error);
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            if ($login_senha === $row["cuid_senha"]) {
-                echo "Login bem-sucedido!";
-            } else {
-                echo "Erro de login: Credenciais incorretas.";
-            }
-        } else {
-            echo "Erro de login: Credenciais incorretas.";
+        $usario = $result->fetch_assoc();
+
+        if(password_verify($login_senha, $usario['cuid_senha'])){
+            echo "usuário logado!";
+        }else{
+            "usuário não logado!";
         }
     }
 }
-
 $conn->close();
 ?>

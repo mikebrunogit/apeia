@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <link href="estilo.css" rel="stylesheet">
+    <link href=".css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="app/assets/logoCircle.png">
  
 

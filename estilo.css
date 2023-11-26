@@ -1,109 +1,24 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+.nav-login .nav-link{
+  border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-}
+    padding: 5px 12px;
+    margin-right:12px;
+     
 
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-}
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backgrop-filter: blur(4px);
 
-.content {
-  padding: 20px;
+    text-decoration: none;
+    font-weight: 500;
+transition: background 0.2s;
+ }
+.nav-login .nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid white;
 }
-
-.background-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #acacac;
-  opacity: 0.7;
-  z-index: -1;
-}
-
-h1 {
-  font-size: 14px; 
-  margin: 0;
-}
-
-ion-icon {
-  font-size: 30px; 
-  margin-right: 10px;
-}
-
-p {
-  margin: 10px 0;
-  font-size: 20px; 
-}
-
-.registration-box {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #555;
-}
-a {
-  color: #007bff;
-  text-decoration: none; 
-}
-
-a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .container {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  h1, ion-icon {
-    font-size: 12px; 
-  }
-
-  p {
-    font-size: 10px; 
-  }
-}
-
