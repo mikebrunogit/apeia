@@ -3,19 +3,9 @@
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "apeia";
+ include("config.php");
 
-// Criar conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
-$sql = "SELECT * FROM tab_paciente";
+ $sql = "SELECT * FROM tab_paciente";
 $result = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
 
 while ($pacientes = mysqli_fetch_array($result))

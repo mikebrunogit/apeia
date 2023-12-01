@@ -1,3 +1,7 @@
+<?php
+    $cadastro_email = $_POST["email"];
+    $cadastro_senha = $_POST["senha"];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,15 +18,7 @@
 
 </head>
 <body>
-    <?php
-    session_start();
     
-    // Verificar se há uma mensagem de erro
-    if (isset($_SESSION['erro_login'])) {
-        echo '<p style="color: red;">' . $_SESSION['erro_login'] . '</p>';
-        unset($_SESSION['erro_login']); // Limpar a mensagem de erro
-    }
-    ?>
     <div class="login-container">
     <div class="form-box">
       <h1>Login</h1>
@@ -30,8 +26,14 @@
         <input type="text" name="email" placeholder="Email">
         <input type="password" name="senha" placeholder="Senha">
         <button type="submit">Entrar</button>
-      </form>
-    </div>
+      </div>
   </div>
+</form>
+  <?php
+    
+    if (isset($_POST['email']) && $_POST['senha']) {
+      echo "senha incorreta";
+    }
+    ?>  
 </body>
 </html>
