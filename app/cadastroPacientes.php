@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apeia | Cadastro Paciente</title>
         <link rel="icon" type="image/x-icon" href="./assets/logoCircle.png">
-        <link href="" rel="stylesheet">
+        <link href="page.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./assets/logoCircle.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet"/>
@@ -72,7 +72,7 @@ include "componentes/navbarLogin.php";
 ?>
 <br><br>
   <div class="container">
-    <h2>Formulário de Registro de Pacientes</h2>
+    <h1>Formulário de Registro de Pacientes</h1>
     <form action="sucessPaciente.php" method="post">
       <label for="nome">Nome do Paciente:</label>
       <input type="text" id="nome" name="nome" required>

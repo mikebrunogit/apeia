@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "INSERT INTO tab_cuidador (cuid_nome, cuid_email, cuid_senha, usuario_criado_em) VALUES ('$cadastro_nome', '$cadastro_email', '$cadastro_senha', '$userCriado')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Cadastro bem-sucedido!";
+            echo "<center><br><br>Bem-vindo!";
         } else {
             echo "Erro de cadastro: " . $conn->error;
         }
