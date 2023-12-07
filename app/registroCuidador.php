@@ -17,14 +17,14 @@
 <div class="registration-container">
     <div class="registration-box">
     <h1>Registro</h1>
-    <form action="index.php" method="post">
+    <form action="dashboard.php" method="post">
       <input type="text" name="nome" placeholder="Nome" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
   <label class="form-check-label" for="flexCheckDefault">
-    Eu li e concodo com os termos e condições.
+    Eu li e concordo com os termos e condições.
   </label>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   ler

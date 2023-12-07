@@ -14,10 +14,14 @@
    <div class="registration-container">
     <div class="registration-box">
       <h1>Login</h1>
-      <form action="index.php" method="post" class="login-form">
+      <form action="dashboard.php" method="post" class="login-form">
         <input type="text" name="email" placeholder="Email">
         <input type="password" name="senha" placeholder="Senha">
+        <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="suporte.html"><p>
+  Esqueci minha senha
+</a><br><br>
              <button type="submit" class="btn btn-primary">Logar</button>
+
       </div>
   </div>
 </form>

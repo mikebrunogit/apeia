@@ -36,7 +36,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class ="nav-login">
-                <a class="nav-link" href="./app/registro.php"><button class="btn btn-primary" type="button">Registro</button></a>
+                <a class="nav-link" href="./app/registroCuidador.php"><button class="btn btn-primary" type="button">Registro</button></a>
             </li>
             <li class ="nav-login">
                 <a class="nav-link" href="./app/loginCuidador.php"><button class="btn btn-primary" type="button">Login</button></a>

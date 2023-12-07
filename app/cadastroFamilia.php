@@ -15,7 +15,28 @@
     <label>Nome do familiar/Responsavel</label><br>
     <input type="text" name=""></input>
     <br><br>
-
+    <label>Selecione o paciente</label>
+    <select name="idPaciente">
+   
+   
+    <?php
+   
+     include("config.php");
+    
+     $sql = "SELECT * FROM tab_paciente";
+    $result = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
+    
+    while ($pacientes = mysqli_fetch_array($result))
+    {
+        $nomePaciente = $pacientes['pac_nome'];
+        $idPaciente = $pacientes['pac_id'];
+        echo '<option value='."$idPaciente".' selected>'.$nomePaciente.'</option>';
+        
+        
+    }
+    echo '</select>';
+    $conn->close();
+    ?>
     <label>Número para contato emergencial</label><br>
     <input type="tel" name="" id="" placeholder="12-3456-78910"><br>
     <br><br>
